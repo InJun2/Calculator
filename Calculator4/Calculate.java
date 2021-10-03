@@ -14,7 +14,7 @@ public class Calculate {
 	protected Calculate(Numbers numbers,Operators operators) {
 		setCalculator(numbers,operators);
 		calculate();
-		Output.print("°è»êµÈ °á°ú´Â "+this.numbers.get(this.numbers.size()-1) + "ÀÔ´Ï´Ù");
+		Output.print("ê³„ì‚° ê²°ê³¼ : "+this.numbers.get(this.numbers.size()-1));
 	}
 	
 	 static {
@@ -23,10 +23,9 @@ public class Calculate {
          operators.put("*", (num1, num2) -> num1 * num2);
      }
 
-     public static int calculate(String operator, int num1, int num2) {
+   	 public static int calculate(String operator, int num1, int num2) {
          return operators.get(operator).apply(num1, num2);
      }
-	
 	
 	private void setCalculator(Numbers numbers,Operators opers) {
 		this.opers =  opers.getOperators();
